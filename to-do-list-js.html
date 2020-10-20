@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-do-list</title>
+</head>
+<body>
+
+<h1>Tasks</h1>
+
+<form>
+    <input type="text" name="task" id="task" placeholder="Enter Task">
+    <input type="submit" value="Add">
+</form>
+
+<ul id="tasks"></ul>
+
+
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+        // Create an event listener for submitting form
+        document.querySelector('form').onsubmit = addTask;
+
+        function addTask() {
+            // Get what the user typed in
+            const task = document.querySelector('#task').value;
+
+            // Create a li item for a task that user types in
+            const listItem = document.createElement('li');
+            // Change the text of this new item with task the user typed in
+            listItem.innerHTML = task;
+            // Append the new list item to the tasks list
+            document.querySelector('#tasks').append(listItem);
+
+            //Stop form from submitting as we are not actually sending this data to a server
+            return false;
+
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
