@@ -34,6 +34,9 @@
             // Append the new list item to the tasks list
             document.querySelector('#tasks').append(listItem);
 
+            // Clear the input box
+            document.querySelector('#task').value = '';
+
             //Stop form from submitting as we are not actually sending this data to a server
             return false;
 

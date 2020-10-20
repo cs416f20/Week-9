@@ -28,6 +28,9 @@
             // Create a new li and append it to the list (ul)
             $('#tasks').append('<li>' + task + '</li>');
 
+            // Clear the input box
+            $('#task').val("");
+
             //Stop form from submitting as we are not actually sending this data to a server
             return false;
         });
